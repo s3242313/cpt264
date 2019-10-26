@@ -43,15 +43,32 @@ print_help () {
 
 #--- SCRIPT START ---
 
-while getopts "chv" opt
+while getopts "cfhpsuv" opt
 do
 	case ${opt} in
 		c)
+			# Display the number of CPU cores.
 			$LSCPU | $AWK '/CPU\(s\):/ {print $2}'
+			;;
+		f)
+			# Display the number of open file descriptors to regular file owned by the user.
+			lsof -u $(whoami) | wc -l
 			;;
 		h | \?)
 			print_help
 			exit
+			;;
+		p)
+			# Display the current process priority.
+			ps -o nice -p $(echo $$) | awk 'END {print $1}'
+			;;
+		s)
+			# Display the maximum system stack size.
+			ulimit -s
+			;;
+		u)
+			# Display the total number of processes running under the user.
+			ps -eux | wc -l
 			;;
 		v)
 			printf "$FILENAME $VERSION\n\n"
