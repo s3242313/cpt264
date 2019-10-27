@@ -1,0 +1,39 @@
+.TH REQUIREMENT 1 "26 October 2019"
+.SH NAME
+basic-information \- Assignment 2, Part B, Requirement 2
+.SH SYNOPSIS
+.B post-processing [-c -f -h -p -s -u -v]
+.SH DESCRIPTION
+.B post-processing
+takes in arguments and displays the following infomation based on these 
+arguments: 	the number of CPU cores, the number of open file descriptors 
+to regular file owned by the user", the current process priority, the maximum 
+system stack size and the total number of processes running under the user.
+.SH OPTIONS
+.IP -c
+Display the number of CPU cores.
+.IP -f
+Display the number of open file descriptors to regular file owned by the user.
+.IP -h
+Display this help and exit.
+.IP -p
+Display the current process priority.
+.IP -s
+Display the maximum system stack size.
+.IP -u
+Display the total number of processes running under the user.
+.IP -v
+Display version number.
+.SH FILES
+
+.SH ENVIRONMENT
+
+.SH DIAGNOSTICS
+
+.BUGS
+Bugs? what bugs.
+.AUTHOR
+Lance Bailey   s3242313@student.rmit.edu.au
+.SH SEE ALSO
+.BR awk (1),
+.BR lscpu (1)
