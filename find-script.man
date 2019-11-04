@@ -1,0 +1,23 @@
+.TH REQUIREMENT 1 "26 October 2019"
+.SH NAME
+find-script \- Assignment 2, Part B, Requirement 3
+.SH SYNOPSIS
+.B find-script [-h -v]
+.SH DESCRIPTION
+.B find-script
+gathers user input as arguments to query the computer using the find command.
+.SH OPTIONS
+.IP -h
+Display this help and exit.
+.IP -v
+Display version information.
+.SH FILES
+.SH ENVIRONMENT
+.SH DIAGNOSTICS
+.BUGS
+.AUTHOR
+Lance Bailey   s3242313@student.rmit.edu.au
+.SH SEE ALSO
+.BR awk (1)
+.BR df (1)
+.BR find (1)
