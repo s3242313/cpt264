@@ -18,29 +18,30 @@
 
 #--- VARIABLES ---
 
-readonly FILENAME="post-processing.sh"
-readonly VERSION="1.0"
+readonly FILENAME='post-processing.sh'
+readonly VERSION='1.0'
 
-readonly AWK="/usr/bin/awk"
-readonly LSCPU="/usr/bin/lscpu"
+readonly AWK='/usr/bin/awk'
+readonly LSCPU='/usr/bin/lscpu'
+readonly WC='/userbin/wc'
 
 
 #--- FUNCTONS ---
 
 print_help () {
-	echo "Usage:"
+	echo 'Usage:'
 	echo " $FILENAME [options]"
-	echo ""
-	echo "Options:"
-	echo " -c,      Display the number of CPU cores" 
-	echo " -f,      Display the number of open file descriptors to regular file owned by the user"
-	echo " -p,      Display the current process priority"
-	echo " -s,      Display the maximum system stack size"
-	echo " -u,      Display the total number of processes running under the user"
-	echo ""
-	echo " -h,      Display this help and exit"
-	echo " -v       Display version number"
-	echo ""
+	echo ''
+	echo 'Options:'
+	echo ' -c,      Display the number of CPU cores' 
+	echo ' -f,      Display the number of open file descriptors to regular file owned by the user'
+	echo ' -p,      Display the current process priority'
+	echo ' -s,      Display the maximum system stack size'
+	echo ' -u,      Display the total number of processes running under the user'
+	echo ''
+	echo ' -h,      Display this help and exit'
+	echo ' -v       Display version number'
+	echo ''
 }
 
 #--- SCRIPT START ---
@@ -50,11 +51,11 @@ do
 	case ${opt} in
 		c)
 			# Display the number of CPU cores.
-			$LSCPU | $AWK '/CPU\(s\):/ {print $2}'
+			$LSCPU | $AWK '/CPU[(]s[)]:/ {print $2}'
 			;;
 		f)
 			# Display the number of open file descriptors to regular file owned by the user.
-			lsof -u $(whoami) | wc -l
+			lsof -u "$(whoami)" | wc -l
 			;;
 		h | \?)
 			print_help
@@ -62,7 +63,7 @@ do
 			;;
 		p)
 			# Display the current process priority.
-			ps -o nice -p $(echo $$) | awk 'END {print $1}'
+			ps -o nice -p $$ | $AWK 'END {print $1}'
 			;;
 		s)
 			# Display the maximum system stack size.
@@ -70,10 +71,11 @@ do
 			;;
 		u)
 			# Display the total number of processes running under the user.
-			ps -eux | wc -l
+			ps -eux | $WC -l
 			;;
 		v)
-			printf "$FILENAME $VERSION\n\n"
+			echo "$FILENAME $VERSION"
+			echo ''
 			exit
 			;;
 	esac
