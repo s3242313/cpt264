@@ -16,8 +16,9 @@
 
 
 #--- VARIABLES ---
-readonly FILENAME="requirement1"
-readonly VERSION="1.0"
+
+readonly FILENAME='basic-information.sh'
+readonly VERSION='1.0'
 
 readonly DF=/bin/df
 readonly FREE=/usr/bin/free
@@ -28,14 +29,18 @@ readonly UPTIME=/usr/bin/uptime
 #--- FUNCTONS ---
 
 print_help () {
-	printf "%s\n"		"Usage:"
-	printf "%s\n\n"		" $FILENAME [options]"
-	printf "%s\n"		"Options:"
-	printf "%s\t\t%s\n"	" -d, --df"		"Show disk free information"
-	printf "%s\t\t%s\n"	" -f, --free"		"Show memory free information"
-	printf "%s\t\t%s\n"	" -i, --ifconfig"	"Show network interface information"
-	printf "%s\t\t%s\n\n"	" -u, --uptime"		"Show uptime"
-	printf "%s\t\t%s\n\n"	" -h, --help"		"Display this help and exit"
+	echo 'Usage:'
+	echo " $FILENAME [options]"
+	echo ''
+	echo 'Options:'
+	echo ' -d, --df         Show disk free information'
+	echo ' -f, --free       Show memory free information'
+	echo ' -i, --ifconfig   Show network interface information'
+	echo ' -u, --uptime     Show uptime'
+	echo ''
+	echo ' -h, --help       Display this help and exit'
+	echo ' -v, --version    Display version number'
+	echo ''
 }
 
 #--- SCRIPT START ---
@@ -51,6 +56,10 @@ do
 			# Show memory free information.
 			$FREE -h
 			;;
+		-h | --help)
+			print_help
+			exit
+			;;
 		-i | --ifconfig)
 			# Show network interface information.
 			$IFCONFIG
@@ -59,12 +68,9 @@ do
 			# Show uptime.
 			$UPTIME
 			;;
-		-h | --help)
-			print_help
-			exit
-			;;
 		-v | --version)
-			printf "$FILENAME $VERSION\n\n"
+			echo "$FILENAME $VERSION"
+			echo ''
 			exit
 			;;
 	esac
