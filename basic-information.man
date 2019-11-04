@@ -1,31 +1,36 @@
 .TH REQUIREMENT 1 "26 October 2019"
 .SH NAME
-requirement1 \- Assignment 2, Part B, Requirement 1
+basic-information \- Assignment 2, Part B, Requirement 1
 .SH SYNOPSIS
-.B requirement1 [-d -f -h -i -u -v]
+.B basic-information [-d -f -h -i -u -v]
 .SH DESCRIPTION
-.B requirement1
+.B basic-information
 takes in arguments and displays the following infomation based on these 
 arguments: amount of free and occupied memory in human readable format, 
 amount of disk space free and in human readable format, network 
 connection information and the system uptime.
 .SH OPTIONS
 .IP -d
-Show disk free information
+Show disk free information.
 .IP -f
-Show memory free information
+Show memory free information.
+.IP -h
+Display this help and exit.
 .IP -h
 Display this help and exit.
 .IP -i
-Show network interface information
+Show network interface information.
 .IP -u
 Show uptime.
+.IP -v
+Display version number.
 .SH FILES
 .SH ENVIRONMENT
 .SH DIAGNOSTICS
 .BUGS
+Bugs? what bugs.
 .AUTHOR
-Lance Bailey
+Lance Bailey   s3242313@student.rmit.edu.au
 .SH SEE ALSO
 .BR df(1),
 .BR free (1),
