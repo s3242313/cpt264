@@ -1,0 +1,25 @@
+.TH REQUIREMENT 1 "26 October 2019"
+.SH NAME
+led-blinker \- Assignment 2, Part B, Requirement 4
+.SH SYNOPSIS
+.B led-blinker [-c -m]
+.SH DESCRIPTION
+.B led-blinker
+Receives arguments from teh basic-profiler.sh script and blinks the
+Pi's LED relative to the amount of CPU or Memory utilization every second.
+.SH OPTIONS
+.IP -c
+CPU Monitor.
+.IP -m
+Memory Monitor.
+.SH FILES
+.SH ENVIRONMENT
+.SH DIAGNOSTICS
+.BUGS
+Bugs? what bugs.
+.AUTHOR
+Lance Bailey   s3242313@student.rmit.edu.au
+.SH SEE ALSO
+.BR awk (1),
+.BR sleep(1),
+.BR top (1),
