@@ -1,0 +1,26 @@
+.TH REQUIREMENT 1 "26 October 2019"
+.SH NAME
+basic-profiler \- Assignment 2, Part B, Requirement 4
+.SH SYNOPSIS
+.B basic-profiler [-h -v]
+.SH DESCRIPTION
+.B basic-profiler
+Request the name of a processs to profile using CPU or Memory, then
+spawns a background script (led-blinker.sh) using these parameters.
+.SH OPTIONS
+.IP -h
+Display this help and exit.
+.IP -v
+Display version number.
+.SH FILES
+.SH ENVIRONMENT
+.SH DIAGNOSTICS
+.BUGS
+Bugs? what bugs.
+.AUTHOR
+Lance Bailey   s3242313@student.rmit.edu.au
+.SH SEE ALSO
+.BR awk (1),
+.BR grep(1),
+.BR kill (1),
+.BR ps (1),
